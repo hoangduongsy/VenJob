@@ -6,7 +6,7 @@ ruby '2.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
 # Use mysql2 as the database for Active Record
-gem 'mysql2' 
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -29,6 +29,18 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+
+source "https://rubygems.org"
+
+gem "nokogiri"
+
+gem "mechanize"
+
+gem "pry"
+
+gem "rubysl-open-uri"
+
+gem "activerecord-import"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
