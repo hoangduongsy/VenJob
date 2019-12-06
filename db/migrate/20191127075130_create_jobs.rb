@@ -11,7 +11,7 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.string :position
       t.datetime :posted_at
       t.datetime :expired_at
-      
+
       t.timestamps null: false
     end
   end
