@@ -10,7 +10,6 @@ namespace :job do
     agent = Mechanize.new
     main_page = Nokogiri::HTML(open(URI.escape("https://careerbuilder.vn/viec-lam/tat-ca-viec-lam-trang-vi.html")))
     total_page = main_page.css("div.ais-stats").css("h1.col-sm-10").css("span").text.to_i
-  wheneverize
     (1..total_page).each do |num|
       page = agent.get("https://careerbuilder.vn/viec-lam/tat-ca-viec-lam-trang-#{num}-vi.html")
       links = page.links.select { |link| link.href.include?("careerbuilder.vn/vi/tim-viec-lam/") }.map(&:href)
