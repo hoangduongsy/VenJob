@@ -38,7 +38,8 @@ namespace :job do
           position = job_page.css("div#showScroll.box2Detail").css("ul.DetailJobNew").css("li.bgLine1").css("p.fl_left").text
 
         rescue
-          puts "Skip #{link}"
+          logger = Rails.logger
+          logger.info "Skip #{link}"
           next
         end
 
