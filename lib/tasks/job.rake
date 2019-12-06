@@ -6,7 +6,7 @@ require "pry"
 
 namespace :job do
   desc "crawl data"
-  task create: :environment do
+  task crawl: :environment do
     agent = Mechanize.new
     main_page = Nokogiri::HTML(open(URI.escape("https://careerbuilder.vn/viec-lam/tat-ca-viec-lam-trang-vi.html")))
     total_page = main_page.css("div.ais-stats").css("h1.col-sm-10").css("span").text.to_i
@@ -38,8 +38,8 @@ namespace :job do
           position = job_page.css("div#showScroll.box2Detail").css("ul.DetailJobNew").css("li.bgLine1").css("p.fl_left").text
 
         rescue
-          logger = Rails.logger
-          logger.info "Skip #{link}"
+          crawler_logger = ActiveSupport::Logger.new("log/crawler.log")
+          crawler_logger.info "Skip #{link}"
           next
         end
 
