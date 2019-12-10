@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_035904) do
   end
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email", default: "", null: false
+    t.string "email"
     t.text "description"
     t.string "address"
     t.string "url"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_035904) do
     t.string "title"
     t.text "description"
     t.text "short_description"
-    t.bigint "company_id"
+    t.integer "company_id"
     t.decimal "salary", precision: 10
     t.integer "currency"
     t.text "requirement"
