@@ -11,14 +11,14 @@ namespace :import_job_csv do
         job.first.update_attributes(job_hash)
       else
         Job.create!({
-          company_id: row[4],
-          company_name: row[5],
-          location: row[16],
-          title: row[9],
-          description: row[7],
-          position: row[8],
-          salary: row[11],
-          requirement: row[10]
+                      company_id: row[4],
+                      company_name: row[5],
+                      location: row[16],
+                      title: row[9],
+                      description: row[7],
+                      position: row[8],
+                      salary: row[11],
+                      requirement: row[10]
         })
       end
     end
