@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_05_082359) do
+ActiveRecord::Schema.define(version: 2019_12_10_035904) do
 
   create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_12_05_082359) do
     t.string "title"
     t.text "description"
     t.text "short_description"
-    t.integer "company_id"
+    t.bigint "company_id"
     t.decimal "salary", precision: 10
     t.integer "currency"
     t.text "requirement"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2019_12_05_082359) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "code"
+    t.string "location"
+    t.string "company_name"
   end
 
   create_table "user_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
