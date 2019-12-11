@@ -22,7 +22,7 @@ namespace :job do
                     salary: row["salary"],
                     requirement: row["requirement"]
                     }
-      job = Job.find_or_initialize_by(title: row["name"])
+      job = Job.find_or_initialize_by(title: row["name"], company_id: company.id)
       job.update(job_params)
       rescue
         import_logger = ActiveSupport::Logger.new("log/import.log")
