@@ -1,0 +1,2 @@
+import_job:
+  csv_file: db/Venjob.csv
