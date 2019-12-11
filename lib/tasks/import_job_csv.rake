@@ -21,9 +21,10 @@ namespace :job do
                     }
       Job.create!(job_params)
     end
-  rescue
-    import_logger = ActiveSupport::Logger.new("log/import.log")
-    import_logger.info "Skip #{row}"
-    next
+    rescue
+      import_logger = ActiveSupport::Logger.new("log/import.log")
+      import_logger.info "Skip #{row}"
+      next
+    end
   end
 end
