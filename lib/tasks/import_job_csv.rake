@@ -15,7 +15,6 @@ namespace :job do
       company.update(company_params)
 
       job_params = {
-                    company_id: company.id,
                     title: row["name"],
                     description: row["description"],
                     position: row["level"],
