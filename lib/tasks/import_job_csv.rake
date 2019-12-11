@@ -1,34 +1,29 @@
 require "csv"
 
-namespace :import_job_csv do
+namespace :job do
   desc "Import CSV file into database"
-  task import_job: :environment do
+  task import_csv: :environment do
     CSV.foreach("db/Venjob.csv", headers: true) do |row|
       company_params = {
-                        email: row["Contact email"],
-                        name: row["Company name"],
-                        address: row["Company address"],
-                        code: row["Company id"]
+                        email: row["contact email"],
+                        name: row["company name"],
+                        address: row["company address"],
+                        code: row["company id"]
                         }
       Company.create!(company_params)
-      rescue
-        import_company_logger = ActiveSupport::Logger.new("log/import_company.log")
-        import_company_logger.info "Skip #{row}"
-        next
       job_params = {
-                    company_id: Company.find_by(code: row["Company id"]).id,
-                    location: row["Work place"],
-                    title: row["Name"],
-                    description: row["Description"],
-                    position: row["Level"],
-                    salary: row["Salary"],
-                    requirement: row["Requirement"]
+                    company_id: Company.find_by(code: row["company id"]).id,
+                    title: row["name"],
+                    description: row["description"],
+                    position: row["level"],
+                    salary: row["salary"],
+                    requirement: row["requirement"]
                     }
       Job.create!(job_params)
-      rescue
-        import_company_logger = ActiveSupport::Logger.new("log/import_job.log")
-        import_company_logger.info "Skip #{row}"
-        next
     end
+  rescue
+    import_logger = ActiveSupport::Logger.new("log/import.log")
+    import_logger.info "Skip #{row}"
+    next
   end
 end
