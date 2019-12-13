@@ -1,0 +1,101 @@
+/* universal */
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.center {
+  text-align: center;
+  background-color:gainsboro;
+  margin-left:260px;
+}
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+
+
+#logo {
+  float: left;
+  width: 50%;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#banner {
+  width: 100%;
+  padding: 0px;
+}
+
+.inverse {
+    overflow: hidden;
+    background-color: gray;
+  }
+
+ul {
+  float: right;
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  background-color: whitesmoke;
+}
+
+li {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+
+}
+
+li.btn-navbar {
+  display: block;
+  padding: 10px 10px;
+}
+
+li.btn-navbar:hover {
+  background-color: mediumblue;
+  text-decoration: none;
+  text-align: center;
+}
+.Job {
+  display: block;
+  background-color: lightblue;
+}

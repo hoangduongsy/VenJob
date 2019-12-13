@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>VenJob</title>
+    <title><%= yield(:title) %>Venjob</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-    <%= yield %>
-  </body>
+    <body>
+      <header class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+          <%= link_to image_tag("zigexn_logo.png", id: "logo", alt: "Venjob logo") %>
+          <nav>
+              <ul>
+                  <li class="btn-navbar"><%=link_to "Login", '#' %></li>
+                  <li class="btn-navbar"><%=link_to "Register", '#' %></li>
+              </ul>
+              <ul>
+              <ul>
+                <li class="btn-navbar"><%=link_to "Favorite", '#' %></li>
+                <li class="btn-navbar"><%=link_to "History", '#' %></li>
+            </ul>
+          </nav>
+          <%= link_to image_tag("banner.jpg", id: "banner", alt: "Venjob banner") %>
+        </div>
+        <div class="container">
+            <%= yield %>
+        </div>
+      </header>
+    </body>
 </html>
