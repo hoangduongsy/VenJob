@@ -5,13 +5,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.center {
-  text-align: center;
-  background-color:gainsboro;
-  margin-left:260px;
-}
-
-
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,8 +33,6 @@ p {
 }
 
 /* header */
-
-
 
 #logo {
   float: left;
@@ -82,7 +73,6 @@ li {
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
-
 }
 
 li.btn-navbar {
@@ -91,11 +81,17 @@ li.btn-navbar {
 }
 
 li.btn-navbar:hover {
-  background-color: mediumblue;
+  background-color: aquamarine;
   text-decoration: none;
   text-align: center;
 }
 .Job {
   display: block;
-  background-color: lightblue;
+}
+
+div.col {
+  border: solid 1px;
+  padding: 10px;
+  margin: 10px;
+  background-color: gainsboro;
 }
