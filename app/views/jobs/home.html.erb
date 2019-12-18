@@ -2,9 +2,11 @@
   <head>
     <title><%= yield(:title) %> Venjob</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="count-total">
+      <h4>Total Jobs:<%= Job.count %></h4>
+  </div>
   </head>
 </div>
-<h4 class="count-total">Total Jobs:<%= Job.count %></h4>
 <!-- List of latest jobs-->
 <div class="Job list">
     <div class="Job-title-wrapper">

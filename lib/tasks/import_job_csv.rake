@@ -28,10 +28,10 @@ require "csv"
         city_job_params = { city_id: city.id }
         city_job = CityJob.find_or_initialize_by(job_id: job.id)
         city_job.update(city_job_params)
-        rescue
-          import_logger = ActiveSupport::Logger.new("log/import.log")
-          import_logger.error "Skip #{row}"
-          next
+      rescue
+        import_logger = ActiveSupport::Logger.new("log/import.log")
+        import_logger.error "Skip #{row}"
+        next
       end
     end
   end
