@@ -22,8 +22,8 @@ require "csv"
         job = Job.find_or_initialize_by(title: row["name"], company_id: company.id)
         job.update(job_params)
 
-        city_params = { region: row["company province"] }
-        city = City.find_or_initialize_by(name: row["work place"])
+        city_params = { region: row["work place"] }
+        city = City.find_or_initialize_by(name: row["company province"])
         city.update(city_params)
         city_job_params = { city_id: city.id }
         city_job = CityJob.find_or_initialize_by(job_id: job.id)

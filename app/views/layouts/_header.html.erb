@@ -1,20 +1,17 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <%= link_to image_tag("zigexn_logo.png", id: "logo", alt: "Venjob logo") %>
-    <nav>
-        <ul>
-            <li class="btn-navbar"><%=link_to "Login", '#' %></li>
-            <li class="btn-navbar"><%=link_to "Register", '#' %></li>
-        </ul>
-        <ul>
-        <ul>
-          <li class="btn-navbar"><%=link_to "Favorite", '#' %></li>
-          <li class="btn-navbar"><%=link_to "History", '#' %></li>
-      </ul>
-    </nav>
+  <nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <button class="btn btn-outline-success" type="button">Login</button>
+    <button class="btn btn-outline-success" type="button">Register</button>
+    <button class="btn btn-outline-success" type="button">Favorite</button>
+    <button class="btn btn-outline-success" type="button">History</button>
+  </form>
+  </nav>
     <%= link_to image_tag("banner.jpg", id: "banner", alt: "Venjob banner") %>
   </div>
   <div class="container">
-      <%= yield %>
+    <%= yield %>
   </div>
 </header>

@@ -1,0 +1,74 @@
+/* universal */
+
+$font-stack: Arial,Helvetica, sans-serif;
+$primary-color: #B6B6B6;
+$sub-color: gainsboro;
+
+body {
+  margin: 0;
+  font-family: $font-stack;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  h2 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+  }
+}
+
+/* header */
+
+#logo {
+  float: left;
+  width: 50%;
+}
+
+#banner {
+  width: 100%;
+  padding: 0px;
+}
+
+.btn-outline-success {
+  color: $sub-color;
+  border-color:blue;
+  background: #01548c;
+}
+
+.count-total {
+  margin-right: 500px;
+}
+
+.col {
+  padding: 5px;
+  margin: 5px;
+  background-color: $primary-color;
+}
+
+.row {
+  padding: 5px;
+  margin: 5px;
+  background-color: $sub-color;
+}
+
+.col-sm {
+  margin: 5px;
+  padding: 5px;
+  background-color: $primary-color;
+}
+
+.form-inline-city {
+  margin-left: 1000px;
+  padding: 5px;
+}

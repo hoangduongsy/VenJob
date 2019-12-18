@@ -3,6 +3,8 @@
     <title><%= yield(:title) %> Venjob</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+</div>
+<h4 class="count-total">Total Jobs:<%= Job.count %></h4>
 <!-- List of latest jobs-->
 <div class="Job list">
     <div class="Job-title-wrapper">
@@ -15,14 +17,17 @@
     </div>
   </br>
 <!--List of top cities-->
-<div class="City list">
-  <div class="City-title-wrapper">
-    <h3>Top Cities</h3>
-  </div>
-  <div class="City-content-wrapper">
-    <div class="row row-cols-3">
-    <%= render partial: "cities/city", collection: @top_cities %>
+  <div class="City list">
+    <div class="City-title-wrapper">
+      <h3>Top Cities</h3>
+    </div>
+    <div class="City-content-wrapper">
+      <div class="row row-cols-3">
+        <%= render partial: "cities/city", collection: @top_cities %>
+        <form class="form-inline-city">
+          <button class="btn btn-outline-success" type="button">All cities</button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 </div>
