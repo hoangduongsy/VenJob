@@ -6,3 +6,5 @@ top:
     limit: 5
   city:
     limit: 9
+  industry:
+    limit: 9

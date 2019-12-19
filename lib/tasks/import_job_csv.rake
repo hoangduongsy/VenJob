@@ -26,6 +26,11 @@ require "csv"
         city = City.find_or_initialize_by(name: row["company province"])
         city.update(city_params)
         CityJob.find_or_create_by(job_id: job.id, city_id: city.id)
+
+        industry_params = { name: row["category"] }
+        industry = Industry.find_or_initialize_by(name: row["category"])
+        industry.update(industry_params)
+        IndustryJob.find_or_create_by(job_id: job.id, industry_id: industry.id)
       rescue
         import_logger = ActiveSupport::Logger.new("log/import.log")
         import_logger.error "Skip #{row}"
