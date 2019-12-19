@@ -1,0 +1,49 @@
+<div class="center jumbotron">
+  <head>
+    <title><%= yield(:title) %> Venjob</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="text-center">
+      <h4>Total Jobs:<%= Job.count %></h4>
+  </div>
+  </head>
+</div>
+<!-- List of latest jobs-->
+<div class="Job list">
+  <div class="Job-title-wrapper">
+    <h3>Latest Jobs</h3>
+  </div>
+  <div class="row row-cols-1">
+    <div class="Job-content-wrapper">
+      <%= render partial: "top/job", collection: @latest_jobs %>
+    </div>
+  </div>
+  </br>
+<!--List of top cities-->
+  <div class="City list">
+    <div class="City-title-wrapper">
+      <h3>Top Cities</h3>
+    </div>
+    <div class="City-content-wrapper">
+      <div class="row row-cols-3">
+        <%= render partial: "cities/city", collection: @top_cities %>
+        <form class="form-inline-city">
+          <button class="btn btn-outline-success" type="button">All cities</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </br>
+  <div class="Industry list">
+    <div class="Industry-title-wrapper">
+      <h3>Top Industries</h3>
+    </div>
+    <div class="Industry-content-wrapper">
+      <div class="row row-cols-3">
+        <%= render partial: "industries/industry", collection: @top_industries %>
+        <form class="form-inline-industry">
+          <button class="btn btn-outline-success" type="button">All industries</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

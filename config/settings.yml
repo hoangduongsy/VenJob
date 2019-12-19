@@ -1,2 +1,10 @@
 import_job:
   csv_file: db/Venjob.csv
+
+top:
+  job:
+    limit: 5
+  city:
+    limit: 9
+  industry:
+    limit: 9
