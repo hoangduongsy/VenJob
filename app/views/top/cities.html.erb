@@ -1,0 +1,41 @@
+<div class="center jumbotron">
+  <head>
+    <title><%= yield(:title) %> Venjob</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+</div>
+
+<!--Display regions list-->
+<div class="area-title-wrapper">
+  <h3>City List</h3>
+</div>
+<div class="area-content-wrapper">
+  <div class="row row-cols-2">
+    <div><h5><a href="#vietnam">Viet Nam</a></h5></div>
+    <div><h5><a href="#international">International</a></h5></div>
+  </div>
+</div>
+
+</br>
+
+<!--Display cities of Vietnam-->
+<div class="area-title-wrapper">
+  <h3>Viet Nam</h3>
+</div>
+<div id="vietnam">
+  <div class="row row-cols-3">
+    <%= render partial: "cities/cities_list", collection: @top_cities %>
+  </div>
+</div>
+
+</br>
+
+<!--Display cities of International-->
+<div class="area-title-wrapper">
+  <h3>International</h3>
+</div>
+<div id="international">
+  <div class="row row-cols-3">
+    <%= render partial: "cities/international_list" %>
+  </div>
+</div>

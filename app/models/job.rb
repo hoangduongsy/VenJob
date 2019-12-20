@@ -3,6 +3,7 @@ class Job < ApplicationRecord
   has_many :city_jobs
 
   def self.latest_jobs
-    @latest ||= Job.order(created_at: :desc)
+    @latest ||= order(created_at: :desc).take(Settings.top.job.limit)
   end
+
 end
