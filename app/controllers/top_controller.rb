@@ -4,8 +4,4 @@ class TopController < ApplicationController
     @top_cities = City.sort_top_cities
     @top_industries = Industry.sort_top_industries
   end
-
-  def cities
-    @top_cities = City.sort_top_cities
-  end
 end
