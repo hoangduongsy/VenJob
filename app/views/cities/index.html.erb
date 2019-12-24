@@ -24,7 +24,7 @@
 </div>
 <div id="vietnam">
   <div class="row row-cols-3">
-    <%= render partial: "cities/cities_list", collection: @top_cities %>
+    <%= render partial: "cities/vn_cities", collection: @top_vn_cities %>
   </div>
 </div>
 
@@ -36,6 +36,6 @@
 </div>
 <div id="international">
   <div class="row row-cols-3">
-    <%= render partial: "cities/international_list" %>
+    <%= render partial: "cities/international_cities", collection: @top_inter_cities %>
   </div>
 </div>

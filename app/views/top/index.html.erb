@@ -29,7 +29,7 @@
   <div class="row row-cols-3">
     <%= render partial: "cities/city", collection: @top_cities %>
     <form class="form-inline-city">
-      <%= link_to "All cties", cities_path, class:"btn btn-outline-success" %>
+      <%= link_to "All cities", cities_path, class:"btn btn-outline-success" %>
     </form>
   </div>
 </div>
@@ -44,7 +44,7 @@
     <div class="row row-cols-3">
       <%= render partial: "industries/industry", collection: @top_industries %>
       <form class="form-inline-industry">
-        <button class="btn btn-outline-success" type="button">All industries</button>
+        <%= link_to "All industries", industries_path, class:"btn btn-outline-success" %>
       </form>
     </div>
   </div>
