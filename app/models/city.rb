@@ -10,7 +10,6 @@ class City < ApplicationRecord
     @vn_cities ||= City.where(region: 0).sort_by(&:jobs_count).reject{ |city| city.jobs_count.zero? }.reverse.take(Settings.top.city.limit)
   end
 
-
   def self.sort_top_inter_cities
     @inter_cities ||= City.where(region: 1).sort_by(&:jobs_count).reject{ |city| city.jobs_count.zero? }.reverse.take(Settings.top.city.limit)
   end
