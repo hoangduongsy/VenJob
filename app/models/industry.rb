@@ -3,7 +3,7 @@ class Industry < ApplicationRecord
   has_many :jobs, through: :industry_jobs
 
   def self.sort_top_industries
-    @industries ||= all.sort_by(&:jobs_count).reverse
+    @industries ||= all.sort_by(&:jobs_count).reverse.take(Settings.top.industry.limit)
   end
 
   def jobs_count

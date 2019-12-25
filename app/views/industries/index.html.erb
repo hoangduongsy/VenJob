@@ -1,0 +1,18 @@
+<div class="center jumbotron">
+  <head>
+    <title><%= yield(:title) %> Venjob</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+</div>
+
+</br>
+
+<!--Display industries list-->
+<div class="area-title-wrapper">
+  <h3>Industry List</h3>
+</div>
+<div id="industry">
+  <div class="row row-cols-3">
+    <%= render partial: "industries/industries_list", collection: @top_industries %>
+  </div>
+</div>

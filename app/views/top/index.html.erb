@@ -7,6 +7,7 @@
   </div>
   </head>
 </div>
+
 <!-- List of latest jobs-->
 <div class="Job list">
   <div class="Job-title-wrapper">
@@ -17,33 +18,36 @@
       <%= render partial: "top/job", collection: @latest_jobs %>
     </div>
   </div>
+
   </br>
+
 <!--List of top cities-->
-  <div class="City list">
-    <div class="City-title-wrapper">
-      <h3>Top Cities</h3>
-    </div>
-    <div class="City-content-wrapper">
-      <div class="row row-cols-3">
-        <%= render partial: "cities/city", collection: @top_cities %>
-        <form class="form-inline-city">
-          <button class="btn btn-outline-success" type="button">All cities</button>
-        </form>
-      </div>
-    </div>
+<div class="City-title-wrapper">
+  <h3>Top Cities</h3>
+</div>
+<div class="city-content-wrapper">
+  <div class="row row-cols-3">
+    <%= render partial: "cities/city", collection: @top_cities %>
+    <form class="form-inline-city">
+      <%= link_to "All cities", cities_path, class:"btn btn-outline-success" %>
+    </form>
   </div>
+</div>
+
   </br>
-  <div class="Industry list">
-    <div class="Industry-title-wrapper">
-      <h3>Top Industries</h3>
-    </div>
-    <div class="Industry-content-wrapper">
-      <div class="row row-cols-3">
-        <%= render partial: "industries/industry", collection: @top_industries %>
-        <form class="form-inline-industry">
-          <button class="btn btn-outline-success" type="button">All industries</button>
-        </form>
-      </div>
+
+<!--List of top industries-->
+<div class="industry-title-wrapper">
+  <h3>Top Industries</h3>
+  </div>
+  <div class="industry-content-wrapper">
+    <div class="row row-cols-3">
+      <%= render partial: "industries/industry", collection: @top_industries %>
+      <form class="form-inline-industry">
+        <%= link_to "All industries", industries_path, class:"btn btn-outline-success" %>
+      </form>
     </div>
   </div>
 </div>
+
+</br>
