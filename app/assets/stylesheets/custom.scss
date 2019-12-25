@@ -71,3 +71,50 @@ h1, h2, h3, h4, h5, h6 {
 .form-inline-industry {
   padding: 5px;
 }
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card-body{
+  background-color: rgba(211, 211, 223, 0.829);
+}
+
+.card-footer {
+  background-color: rgba(211, 211, 223, 0.829);
+}
+
+.card-header h3{
+color: gainsboro;
+text-align: center;
+}
+
+.card-header {
+  background-color: rgb(18, 121, 255);
+}
+
+.card-footer {
+  border: none;
+  margin: 20px;
+}
+.input-group-prepend span{
+width: 70px;
+background-color: rgb(54, 134, 240);
+color: black;
+}
+
+.login_btn{
+color: gainsboro;
+background-color: rgb(54, 134, 240);
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: aqua;
+}
+
+.d-flex {
+  height: 10px;
+}

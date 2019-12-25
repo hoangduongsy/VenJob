@@ -34,6 +34,7 @@ gem "rubysl-open-uri"
 gem "whenever", require: false
 gem "activerecord-import"
 gem "config"
+gem 'counter_culture', '~> 0.1.33'
 
 group :development, :test do
   # Call "byebug" anywhere in the code to stop execution and get a debugger console
