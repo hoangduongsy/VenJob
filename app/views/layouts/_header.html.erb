@@ -7,6 +7,9 @@
     <button class="btn btn-outline-success" type="button">Register</button>
     <button class="btn btn-outline-success" type="button">Favorite</button>
     <button class="btn btn-outline-success" type="button">History</button>
+    <% if user_signed_in? %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% end %>
   </form>
   </nav>
     <%= link_to image_tag("banner.jpg", id: "banner", alt: "Venjob banner") %>

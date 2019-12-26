@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 2019_12_26_070737) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "encrypted_password"
+    t.datetime "remember_created_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_digest"], name: "index_users_on_reset_digest", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true

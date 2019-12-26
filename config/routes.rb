@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :users
   as :user do
     get "login" => "devise/sessions#new"
-    post "login" => "devise/sessions#create"
-    delete "logout" => "devise/sessions#destroy"
+    # post "login" => "devise/sessions#create"
+    # delete "logout" => "devise/sessions#destroy"
   end
 end
