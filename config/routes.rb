@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   resource :top, only: :index
   devise_for :users
   as :user do
-    get "login" => "devise/sessions#new"
-    # post "login" => "devise/sessions#create"
-    # delete "logout" => "devise/sessions#destroy"
+    get "login" => "devise/sessions#new", as: :login
   end
 end

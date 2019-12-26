@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-inline-city {
   padding: 5px;
-}A
+}
 
 .form-inline-industry {
   padding: 5px;
@@ -100,11 +100,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .login_btn:hover{
-  color: black;
+  color: white;
   background-color: rgb(33, 195, 195);
   }
 
-input:focus{
-    outline: 0 0 0 0  !important;
-    box-shadow: 0 0 0 0 !important;
+.links {
+  position: absolute;
+  bottom: 20px;
+  margin-left: 70px;
+  top: 300px;
 }
