@@ -4,11 +4,11 @@
   <nav class="navbar navbar-light bg-light">
   <form class="form-inline">
     <%= link_to "Login", login_path, class:"btn btn-outline-success" %>
-    <button class="btn btn-outline-success" type="button">Register</button>
+    <%= link_to "Register", registration_path, class:"btn btn-outline-success" %>
     <button class="btn btn-outline-success" type="button">Favorite</button>
     <button class="btn btn-outline-success" type="button">History</button>
     <% if user_signed_in? %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-outline-success" %>
     <% end %>
   </form>
   </nav>
