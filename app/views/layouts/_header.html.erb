@@ -2,15 +2,18 @@
   <div class="container">
     <%= link_to image_tag("zigexn_logo.png", id: "logo", alt: "Venjob logo") %>
   <nav class="navbar navbar-light bg-light">
-  <form class="form-inline">
-    <%= link_to "Login", login_path, class:"btn btn-outline-success" %>
-    <%= link_to "Register", registration_path, class:"btn btn-outline-success" %>
-    <button class="btn btn-outline-success" type="button">Favorite</button>
-    <button class="btn btn-outline-success" type="button">History</button>
     <% if user_signed_in? %>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-outline-success" %>
+      <button class="btn btn-outline-success" type="button">Favorite</button>
+      <button class="btn btn-outline-success" type="button">History</button>
+    <% else %>
+      <form class="form-inline">
+        <%= link_to "Login", login_path, class:"btn btn-outline-success" %>
+        <%= link_to "Register", new_user_registration_path, class:"btn btn-outline-success" %>
+        <button class="btn btn-outline-success" type="button">Favorite</button>
+        <button class="btn btn-outline-success" type="button">History</button>
+      </form>
     <% end %>
-  </form>
   </nav>
     <%= link_to image_tag("banner.jpg", id: "banner", alt: "Venjob banner") %>
   </div>
