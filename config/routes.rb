@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   as :user do
     get "login" , to: "devise/sessions#new"
     get "registration/", to: "devise/registrations#new"
+    post "registration.user/", to: "devise/registrations#create"
+    put "registration.user/", to: "devise/registrations#update"
     get "my/info", to: "devise/registrations#edit"
-    get "my/:id", to: "users#show"
+    get "my/", to: "users#show"
   end
 end
