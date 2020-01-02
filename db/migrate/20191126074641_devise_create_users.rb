@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users do |t|
@@ -29,7 +27,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :remember_digest
       t.datetime :activated_at
       t.string :activation_digest
-      # t.datetime :confirmation_sent_at
+      t.datetime :confirmation_sent_at
       # t.string   :unconfirmed_email # Only if using reconfirmable
 
 
@@ -44,7 +42,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     add_index :users, :email, unique: true
     add_index :users, :username, unique: true
     add_index :users, :reset_digest, unique: true
-    # add_index :users, :confirmation_token,   unique: true
+    add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end
 end

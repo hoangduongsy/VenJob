@@ -66,8 +66,47 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-inline-city {
   padding: 5px;
-}A
+}
 
 .form-inline-industry {
   padding: 5px;
+}
+
+.card-body-form {
+  height: 300px;
+  width: 300px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: gainsboro !important;
+  }
+
+.card-header {
+  background-color: rgba(28, 93, 233, 0.856);
+  color: whitesmoke;
+}
+.card-footer-form {
+  margin:50px;
+}
+
+.field {
+  margin-left: 50px;
+}
+
+.login_btn{
+  color: black;
+  background-color: rgba(28, 93, 233, 0.856);
+  width: 100px;
+  margin: 10px;
+  }
+
+  .login_btn:hover{
+  color: white;
+  background-color: rgb(33, 195, 195);
+  }
+
+.links {
+  position: absolute;
+  bottom: 20px;
+  margin-left: 70px;
+  top: 300px;
 }

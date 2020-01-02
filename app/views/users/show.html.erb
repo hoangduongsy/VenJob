@@ -1,0 +1,25 @@
+</br>
+
+<div class="container">
+ <div class="d-flex justify-content-center h-100">
+  <div class="card">
+   <div>
+    <label>Email Address: </label>
+     <%= current_user.email %>
+   </div>
+   <div>
+    <label>Full Name: </label>
+    <%= current_user.username %>
+   </div>
+
+   </br>
+
+    <div class="actions">
+      <%= link_to "Update", my_info_path, class: "btn btn-primary" %>
+      <%= link_to "My Jobs", "#", class: "btn btn-primary" %>
+    </div>
+  </div>
+ </div>
+</div>
+
+</br>
