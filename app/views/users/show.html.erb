@@ -15,10 +15,8 @@
    </br>
 
     <div class="actions">
-     <%= form_for(@user, url: my_path(params[:id])) do |f| %>
-      <%= f.submit "Update", class: "btn btn-primary" %>
-      <%= f.submit "My Jobs", class: "btn btn-primary" %>
-     <% end %>
+      <%= link_to "Update", my_info_path, class: "btn btn-primary" %>
+      <%= link_to "My Jobs", "#", class: "btn btn-primary" %>
     </div>
   </div>
  </div>
