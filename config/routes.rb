@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     get "my/info", to: "devise/registrations#edit"
     get "my/", to: "users#show"
     get "forgot_password", to: "devise/passwords#edit"
+    get "reset_password", to: "devise/passwords#new"
+    post "forgot_password.user/", to: "devise/passwords#create"
   end
 end
