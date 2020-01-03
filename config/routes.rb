@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     put "registration.user/", to: "devise/registrations#update"
     get "my/info", to: "devise/registrations#edit"
     get "my/", to: "users#show"
+    get "forgot_password", to: "devise/passwords#edit"
   end
 end
