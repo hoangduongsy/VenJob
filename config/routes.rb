@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :industries, only: :index
   resources :top, only: :index
   resources :users, only: :show
-  resources :jobs, only: :index
+  # resources :jobs, only: :index
   devise_for :users
   as :user do
     get "login" , to: "devise/sessions#new"
@@ -18,4 +18,10 @@ Rails.application.routes.draw do
     post "forgot_password.user/", to: "devise/passwords#create"
     put "reset_password.user", to: "devise/passwords#update"
   end
+
+  concern :paginatable do
+    get "(page/:page)", action: :index, on: :collection, as: ""
+  end
+
+  resources :jobs, concerns: :paginatable
 end
