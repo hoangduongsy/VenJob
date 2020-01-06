@@ -6,4 +6,7 @@ class Job < ApplicationRecord
     @latest ||= order(created_at: :desc).take(Settings.top.job.limit)
   end
 
+  # def self.all_jobs
+  #   @all_jobs ||= all.sort_by(& :created_at)
+  # end
 end

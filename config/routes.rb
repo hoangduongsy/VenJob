@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root "top#index"
   resources :cities, only: :index
   resources :industries, only: :index
-  resource :top, only: :index
-  resource :users, only: :show
+  resources :top, only: :index
+  resources :users, only: :show
+  resources :jobs, only: :index
   devise_for :users
   as :user do
     get "login" , to: "devise/sessions#new"
@@ -15,5 +16,6 @@ Rails.application.routes.draw do
     get "forgot_password", to: "devise/passwords#edit"
     get "reset_password", to: "devise/passwords#new"
     post "forgot_password.user/", to: "devise/passwords#create"
+    put "reset_password.user", to: "devise/passwords#update"
   end
 end

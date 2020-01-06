@@ -7,6 +7,6 @@
 
 set :environment, "development"
 set :output, "/crawler/config/import_log.log"
-every 1.day at: '5:00 pm' do
+every 1.day at: '4:00 pm' do
   rake "job:create"
 end

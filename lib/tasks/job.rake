@@ -34,7 +34,7 @@ namespace :job do
             requirement = job_page.css("div.content_fck")[1].css("p").text
           end
 
-          salary = job_page.css("div#showScroll.box2Detail").css("ul.DetailJobNew").css("li.bgLine2").css("p.fl_right").text
+          salary = job_page.css("div#showScroll.box2Detail").css("ul.DetailJobNew").css("li.bgLine2").css("p.fl_right")[1].text
           position = job_page.css("div#showScroll.box2Detail").css("ul.DetailJobNew").css("li.bgLine1").css("p.fl_left").text
 
         rescue
