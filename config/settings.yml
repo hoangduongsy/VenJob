@@ -8,6 +8,7 @@ top:
     limit: 9
   industry:
     limit: 9
+
 all:
   job:
     limit: 20
