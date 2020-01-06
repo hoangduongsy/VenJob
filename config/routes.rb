@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :industries, only: :index
   resources :top, only: :index
   resources :users, only: :show
-  # resources :jobs, only: :index
   devise_for :users
   as :user do
     get "login" , to: "devise/sessions#new"
