@@ -10,10 +10,10 @@
   <div class="job-title-wrapper">
     <h3>All Jobs</h3>
   </div>
-  <%= paginate @all_jobs %>
+  <%= paginate @jobs %>
   <div class="row row-cols-1">
     <div class="job-content-wrapper">
-      <%= render partial: "jobs/jobs_list", collection: @all_jobs %>
+      <%= render partial: "jobs/jobs_list", collection: @jobs %>
     </div>
   </div>
-<%= paginate @all_jobs %>
+<%= paginate @jobs %>

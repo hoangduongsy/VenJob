@@ -18,9 +18,12 @@ Rails.application.routes.draw do
     put "reset_password.user", to: "devise/passwords#update"
   end
 
+  get "jobs/city/:city_id", to: "jobs#index", as: "city_jobs"
+  get "jobs/industry/:industry_id", to: "jobs#index", as: "industry_jobs"
+
   concern :paginatable do
     get "(page/:page)", action: :index, on: :collection, as: ""
   end
 
-  resources :jobs, concerns: :paginatable
+  resources :jobs, only: :index, concerns: :paginatable
 end

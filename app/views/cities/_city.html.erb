@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col text-center">
-      <%= city.name %>
-      (<%= city.jobs_count %> jobs)
+      <%= link_to "#{city.name} (#{city.jobs_count})", city_jobs_path(city) %>
     </div>
   </div>
 </div>
