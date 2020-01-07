@@ -1,0 +1,26 @@
+<div class="jobs-list">
+  <div class="row row-cols">
+    <div class="col">
+      <h4><b>Title:</b></h4> <%= simple_format jobs_list.title %>
+    </div>
+    <div class="col">
+      <h4><b>Salary:</b></h4> <%= jobs_list.salary%>
+    </div>
+    <div class="col">
+      <h4><b>Level:</b></h4> <%=  simple_format jobs_list.position %>
+    </div>
+  </div>
+  <div class="row row-cols">
+    <div class="col">
+      <h4><b>Description:</b></h4>
+      <%= truncate(simple_format(jobs_list.description), escape: false, length: 250) %>
+    </div>
+  </div>
+  <div class="row row-cols">
+    <div class="col">
+      <h4> <b>Requirement:</b></h4>
+      <%= ( simple_format jobs_list.requirement) %>
+    </div>
+  </div>
+  </br>
+</div>
