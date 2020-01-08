@@ -1,10 +1,3 @@
-<div class="center jumbotron">
-  <head>
-    <title><%= yield(:title) %> Venjob</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-</div>
-
 <!--links menu-->
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -30,20 +23,20 @@
 
         <dt class="col-sm-3">Position:</dt>
         <dd class="col-sm-9">
-          <%= @job.position%>
+          <%= @job.position %>
         </dd>
 
         <dt class="col-sm-3">City:</dt>
         <dd class="col-sm-9">
-        <% @job.cities.map(&:name).each do |city_name| %>
-          <%= link_to city_name, city_jobs_path(City.find_by_name(city_name).id) %>
+        <% @job.cities.each do |city| %>
+          <%= link_to city.name, city_jobs_path(city) %>
         <% end %>
         </dd>
 
         <dt class="col-sm-3">Industry:</dt>
         <dd class="col-sm-9">
-        <% @job.industries.map(&:name).each do |industry_name| %>
-          <%= link_to industry_name, industry_jobs_path(Industry.find_by_name( industry_name).id) %>
+        <% @job.industries.each do |industry| %>
+          <%= link_to industry.name, industry_jobs_path(industry) %>
         <% end %>
         </dd>
 
