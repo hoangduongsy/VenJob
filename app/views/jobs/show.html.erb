@@ -1,0 +1,54 @@
+<!--links menu-->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "TOP", top_index_path %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "City", cities_path %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "Industry", industries_path %>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Current Job</li>
+  </ol>
+</nav>
+
+<!--Display detail of jobs-->
+<div class="row row-cols-1">
+    <div class="job-content-wrapper">
+      <dl class="row">
+        <dt class="col-sm-3">Job Title:</dt>
+        <dd class="col-sm-9"><%= @job.title %></dd>
+
+        <dt class="col-sm-3">Position:</dt>
+        <dd class="col-sm-9">
+          <%= @job.position %>
+        </dd>
+
+        <dt class="col-sm-3">City:</dt>
+        <dd class="col-sm-9">
+        <% @job.cities.each do |city| %>
+          <%= link_to city.name, city_jobs_path(city) %>
+        <% end %>
+        </dd>
+
+        <dt class="col-sm-3">Industry:</dt>
+        <dd class="col-sm-9">
+        <% @job.industries.each do |industry| %>
+          <%= link_to industry.name, industry_jobs_path(industry) %>
+        <% end %>
+        </dd>
+
+        <dt class="col-sm-3">Salary:</dt>
+        <dd class="col-sm-9"><%= @job.salary %></dd>
+
+        <dt class="col-sm-3 text-truncate">Description:</dt>
+        <dd class="col-sm-9"><%= ( simple_format @job.description) %></dd>
+
+        <dt class="col-sm-3">Requirement:</dt>
+        <dd class="col-sm-9"><%= simple_format @job.requirement %></dd>
+      </dl>
+
+    </div>
+  </div

@@ -20,10 +20,11 @@ Rails.application.routes.draw do
 
   get "jobs/city/:city_id", to: "jobs#index", as: "city_jobs"
   get "jobs/industry/:industry_id", to: "jobs#index", as: "industry_jobs"
+  get "detail/:job_id", to: "jobs#show", as: "job"
 
   concern :paginatable do
     get "(page/:page)", action: :index, on: :collection, as: ""
   end
 
-  resources :jobs, only: :index, concerns: :paginatable
+  resources :jobs, only: :show, concerns: :paginatable
 end
