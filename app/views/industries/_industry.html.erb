@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-md-center">
     <div class="col text-center">
-      <%= link_to "#{industry.name} (#{industry.jobs_count})", industry_jobs_path(industry) %>
+      <%= link_to "#{industry.name} (#{industry.jobs_count})", industry_jobs_path(industry.id) %>
     </div>
   </div>
 </div>

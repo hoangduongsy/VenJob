@@ -1,5 +1,4 @@
 class JobsController < ApplicationController
-
   def index
     if params[:city_id].present?
       @jobs = City.find_by(id: params[:city_id]).jobs
@@ -10,5 +9,9 @@ class JobsController < ApplicationController
     end
 
     @jobs = @jobs.page(params[:page]).per(Settings.all.job.limit)
+  end
+
+  def show
+    @job = Job.find_by(id: params[:job_id])
   end
 end

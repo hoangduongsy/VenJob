@@ -1,0 +1,61 @@
+<div class="center jumbotron">
+  <head>
+    <title><%= yield(:title) %> Venjob</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+</div>
+
+<!--links menu-->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "TOP", top_index_path %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "City", cities_path %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "Industry", industries_path %>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Current Job</li>
+  </ol>
+</nav>
+
+<!--Display detail of jobs-->
+<div class="row row-cols-1">
+    <div class="job-content-wrapper">
+      <dl class="row">
+        <dt class="col-sm-3">Job Title:</dt>
+        <dd class="col-sm-9"><%= @job.title %></dd>
+
+        <dt class="col-sm-3">Position:</dt>
+        <dd class="col-sm-9">
+          <%= @job.position%>
+        </dd>
+
+        <dt class="col-sm-3">City:</dt>
+        <dd class="col-sm-9">
+        <% @job.cities.map(&:name).each do |city_name| %>
+          <%= link_to city_name, city_jobs_path(City.find_by_name(city_name).id) %>
+        <% end %>
+        </dd>
+
+        <dt class="col-sm-3">Industry:</dt>
+        <dd class="col-sm-9">
+        <% @job.industries.map(&:name).each do |industry_name| %>
+          <%= link_to industry_name, industry_jobs_path(Industry.find_by_name( industry_name).id) %>
+        <% end %>
+        </dd>
+
+        <dt class="col-sm-3">Salary:</dt>
+        <dd class="col-sm-9"><%= @job.salary %></dd>
+
+        <dt class="col-sm-3 text-truncate">Description:</dt>
+        <dd class="col-sm-9"><%= ( simple_format @job.description) %></dd>
+
+        <dt class="col-sm-3">Requirement:</dt>
+        <dd class="col-sm-9"><%= simple_format @job.requirement %></dd>
+      </dl>
+
+    </div>
+  </div
