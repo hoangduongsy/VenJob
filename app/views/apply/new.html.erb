@@ -1,0 +1,59 @@
+<!--links menu-->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">
+      Apply New
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "Apply Confirmation", "#" %>
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "Apply Finish", "#" %>
+    </li>
+  </ol>
+</nav>
+
+<div class="container">
+  <div class="d-flex justify-content-center ">
+		<div class="card">
+      <div class="card-header text-center">
+        <h2>Apply Form</h2>
+        </div>
+        <%= form_for(:user_job, url: apply_path) do |f|%>
+          <div class= "field">
+            <%= f.label :username %>
+            </br>
+            <%= f.text_field :username, autofocus: true, length: 200 %>
+          </div>
+
+          <div class="field">
+          <%= f.label :first_name %>
+          </br>
+          <%= f.text_field :first_name, autofocus: true %>
+          </div>
+
+          <div class="field">
+            <%= f.label :last_name %>
+            </br>
+            <%= f.text_field :last_name, autofocus: true %>
+          </div>
+
+          <div class="field">
+            <%= f.label :email %>
+            </br>
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+
+          <div class="field">
+            <%= f.label :CV_URL %>
+            </br>
+            <%= f.url_field :cv_url, autofocus: true %>
+          </div>
+          </br>
+          <div class = "actions">
+            <%= f.submit "Confirm", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>

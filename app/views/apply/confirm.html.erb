@@ -1,0 +1,48 @@
+<!--links menu-->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <%= link_to "Apply New", apply_path %>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">
+      Apply Confirm
+    </li>
+    <li class="breadcrumb-item">
+      <%= link_to "Apply Finish", "#" %>
+    </li>
+  </ol>
+</nav>
+
+<div class="row row-cols-1">
+    <div class="job-content-wrapper">
+      <dl class="row">
+        <dt class="col-sm-3">Username:</dt>
+        <dd class="col-sm-9"><%= @apply.username %></dd>
+
+        <dt class="col-sm-3">FirstName:</dt>
+        <dd class="col-sm-9"><%= @apply.first_name %></dd>
+
+
+        <dt class="col-sm-3">LastName:</dt>
+        <dd class="col-sm-9"><%= @apply.last_name %></dd>
+
+        <dt class="col-sm-3">Email:</dt>
+        <dd class="col-sm-9">
+          <%= @apply.email %>
+        </dd>
+
+        <dt class="col-sm-3">CV URL:</dt>
+        <dd class="col-sm-9">
+          <%= @apply.cv_url %>
+        </dd>
+      </dl>
+
+      <div class = "float-right">
+        <%= link_to "Done", done_path, class: "btn btn-primary" %>
+      </div>
+
+      <div class= "float-left">
+        <%= link_to "Edit", apply_path, class: "btn btn-primary" %>
+      </div>
+  </div>
+</div>
