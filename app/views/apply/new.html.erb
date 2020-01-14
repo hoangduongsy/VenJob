@@ -19,7 +19,7 @@
       <div class="card-header text-center">
         <h2>Apply Form</h2>
         </div>
-        <%= form_for(:user_job, url: apply_path) do |f|%>
+        <%= form_for(@apply, url: confirm_path(@job)) do |f|%>
           <div class= "field">
             <%= f.label :username %>
             </br>

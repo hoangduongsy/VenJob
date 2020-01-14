@@ -1,33 +1,31 @@
 class ApplyController < ApplicationController
+  before_action :load_job, only: [:new, :done, :confirm]
+
   def done
-    # ApplyMailer.notify(@apply).deliver
-    # redirect_to done_path(@apply)
+    binding.pry
+    @apply = UserJob.new(apply_job_params)
+    if @apply.save
+      redirect_to done_path
+    else
+      render :new
+    end
   end
 
   def new
-    @apply = UserJob.new(user_job_params)
+    @apply = UserJob.new
   end
 
   def confirm
-    #binding.pry
-    @job = Job.find_by(id: params[:job_id])
-    @apply = current_user.apply_jobs.new(apply_job_params.merge(job_id: @job.id))
-    # @apply = @job.user_job.new(user_job_param)
-      if @apply.save
-        redirect_to done_path
-      end
-  end
-
-  def create
+    @apply = UserJob.new(apply_job_params)
   end
 
   private
 
-  def user_job_params
-    params.permit(:job_id, :cv_url, :first_name, :last_name, :username, :email)
+  def apply_job_params
+    params.require(:user_job).permit(:cv_url, :first_name, :last_name, :username, :email)
   end
 
-  def apply_job_params
-    params.permit(:job_id, :user_id, :cv_url, :first_name, :last_name, :username, :email)
+  def load_job
+    @job = Job.find_by(id: params[:job_id])
   end
 end

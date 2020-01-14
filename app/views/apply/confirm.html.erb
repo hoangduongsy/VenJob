@@ -12,33 +12,49 @@
     </li>
   </ol>
 </nav>
+<%= form_for(@apply, url: done_path(@job)) do |f|%>
+  <div class= "field">
+    <%= f.label :username %>
+    </br>
+    <%= @apply.username %>
+    <%= f.hidden_field :username, value: @apply.username %>
+  </div>
 
-<div class="row row-cols-1">
-    <div class="job-content-wrapper">
-      <dl class="row">
-        <dt class="col-sm-3">Username:</dt>
-        <dd class="col-sm-9"><%= @apply.username %></dd>
+  <div class="field">
+    <%= f.label :first_name %>
+    </br>
+    <%= @apply.first_name %>
+    <%= f.hidden_field :first_name, value: @apply.first_name %>
+  </div>
 
-        <dt class="col-sm-3">FirstName:</dt>
-        <dd class="col-sm-9"><%= @apply.first_name %></dd>
+  <div class="field">
+    <%= f.label :last_name %>
+    </br>
+    <%= @apply.last_name %>
+    <%= f.hidden_field :last_name, value: @apply.last_name %>
+  </div>
 
+  <div class="field">
+    <%= f.label :email %>
+    </br>
+    <%= @apply.email %>
+    <%= f.hidden_field :email, value: @apply.email %>
+  </div>
 
-        <dt class="col-sm-3">LastName:</dt>
-        <dd class="col-sm-9"><%= @apply.last_name %></dd>
+  <div class="field">
+    <%= f.label :CV_URL %>
+    </br>
+    <%= @apply.cv_url %>
+    <%= f.hidden_field :cv_url, value: @apply.cv_url %>
+  </div>
+  </br>
 
-        <dt class="col-sm-3">Email:</dt>
-        <dd class="col-sm-9">
-          <%= @apply.email %>
-        </dd>
-
-        <dt class="col-sm-3">CV URL:</dt>
-        <dd class="col-sm-9">
-          <%= @apply.cv_url %>
-        </dd>
-      </dl>
-
+  <div class = "actions">
+    <%= f.submit "Done", class: "btn btn-primary" %>
+  </div>
+<% end %>
       <div class = "float-right">
-        <%= link_to "Done", done_path, class: "btn btn-primary" %>
+        <%= link_to "Done", done_path(@job), class: "btn btn-primary" %>
       </div>
 
       <div class= "float-left">
