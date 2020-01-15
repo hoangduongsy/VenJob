@@ -1,0 +1,2 @@
+class Favorite < UserJob
+end

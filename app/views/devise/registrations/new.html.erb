@@ -40,10 +40,15 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
 
+        <div class="field">
+          <%= f.label :Upload_CV %><br />
+          <%= f.url_field :cv_url %>
+        </div>
+
         </br>
 
         <div class="actions text-center">
-          <%= f.submit "Sign up", class: "btn-primary" %>
+          <%= f.submit "Sign up", class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>

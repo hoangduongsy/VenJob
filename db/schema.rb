@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_06_041448) do
+ActiveRecord::Schema.define(version: 2020_01_15_032331) do
 
   create_table "cities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -71,12 +71,17 @@ ActiveRecord::Schema.define(version: 2020_01_06_041448) do
   create_table "user_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "job_id"
-    t.integer "job_type"
+    t.string "type"
     t.datetime "favorited_at"
     t.datetime "viewed_at"
     t.datetime "applied_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "cv_url"
+    t.string "username"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
     t.index ["job_id"], name: "index_user_jobs_on_job_id"
     t.index ["user_id", "job_id"], name: "index_user_jobs_on_user_id_and_job_id"
     t.index ["user_id"], name: "index_user_jobs_on_user_id"
@@ -91,7 +96,6 @@ ActiveRecord::Schema.define(version: 2020_01_06_041448) do
     t.string "first_name"
     t.string "last_name"
     t.text "cv_url"
-    t.string "password_digest"
     t.integer "role"
     t.string "remember_digest"
     t.datetime "activated_at"
