@@ -10,7 +10,6 @@ class ApplyController < ApplicationController
              end
   end
 
-
   def confirm
     @apply = current_user.applies.new(apply_job_params)
   end

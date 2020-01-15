@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_01_15_032331) do
   create_table "user_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "job_id"
-    t.integer "type"
+    t.string "type"
     t.datetime "favorited_at"
     t.datetime "viewed_at"
     t.datetime "applied_at"

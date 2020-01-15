@@ -20,34 +20,28 @@
         <h2>Apply Form</h2>
         </div>
         <%= form_for(@apply, url: confirm_path(@job)) do |f|%>
-          <div class= "field">
-            <%= f.label :username %>
-            </br>
-            <%= f.text_field :username, autofocus: true, length: 200 %>
-          </div>
-
           <div class="field">
           <%= f.label :first_name %>
           </br>
-          <%= f.text_field :first_name, autofocus: true %>
+          <%= f.text_field :first_name %>
           </div>
 
           <div class="field">
             <%= f.label :last_name %>
             </br>
-            <%= f.text_field :last_name, autofocus: true %>
+            <%= f.text_field :last_name %>
           </div>
 
           <div class="field">
             <%= f.label :email %>
             </br>
-            <%= f.email_field :email, autofocus: true %>
+            <%= f.email_field :email %>
           </div>
 
           <div class="field">
             <%= f.label :CV_URL %>
             </br>
-            <%= f.url_field :cv_url, autofocus: true %>
+            <%= f.url_field :cv_url %>
           </div>
           </br>
           <div class = "actions">
