@@ -1,17 +1,6 @@
-<!--links menu-->
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class = "breadcrumb-item">
-      <%= link_to "Apply New" %>
-    </li>
-    <li class="breadcrumb-item">
-      <%= link_to "Apply Confirmation", "#" %>
-    </li>
-    <li class = "breadcrumb-item active" aria-current="page">
-      Apply Finish
-    </li>
-  </ol>
-</nav>
+<%= content_for(:done_step, "active") %>
+
+<%= render "apply_breadcrumb" %>
 
 <h4>Thank you for apply</h4>
 </br>

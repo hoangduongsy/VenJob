@@ -1,70 +1,54 @@
-<!--links menu-->
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <%= link_to "Apply New", apply_path %>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">
-      Apply Confirm
-    </li>
-    <li class="breadcrumb-item">
-      <%= link_to "Apply Finish", "#" %>
-    </li>
-  </ol>
+<%= content_for(:confirm_step, "active") %>
+
+<%= render "apply_breadcrumb" %>
 
 <div class="container">
   <div class="d-flex justify-content-center ">
     <div class="card">
-      </nav>
       <%= form_for(@apply, url: done_path(@job)) do |f|%>
-        <div class= "field">
-          <%= f.label :username %>
-          </br>
-          <%= @apply.username %>
-          <%= f.hidden_field :username, value: @apply.username %>
-        </div>
-
-        <div class="field">
+        <div class = "form-group row">
           <%= f.label :first_name %>
-          </br>
+          <div class = "form-control">
           <%= @apply.first_name %>
+          </div>
           <%= f.hidden_field :first_name, value: @apply.first_name %>
         </div>
 
-        <div class="field">
+        <div class = "form-group row">
           <%= f.label :last_name %>
-          </br>
+          <div class = "form-control">
           <%= @apply.last_name %>
+          </div>
           <%= f.hidden_field :last_name, value: @apply.last_name %>
         </div>
 
-        <div class="field">
+        <div class = "form-group row">
           <%= f.label :email %>
-          </br>
+          <div class = "form-control">
           <%= @apply.email %>
+          </div>
           <%= f.hidden_field :email, value: @apply.email %>
         </div>
 
-        <div class="field">
+        <div class = "form-group row">
           <%= f.label :CV_URL %>
-          </br>
+          <div class = "form-control">
           <%= @apply.cv_url %>
+          </div>
           <%= f.hidden_field :cv_url, value: @apply.cv_url %>
         </div>
         </br>
 
-        <div class="field">
+        <div class = "form-group">
           <div class = "actions">
             <%= f.submit "Done", class: "btn btn-primary" %>
-          </div>
-          <div class= "action float-right">
             <%= link_to "Edit", apply_path(@job, apply: { first_name: @apply.first_name,
                                                           last_name: @apply.last_name,
                                                           email: @apply.email,
-                                                          cv_url: @apply.cv_url }), class: "btn btn-primary" %>
+                                                          cv_url: @apply.cv_url }), class: "btn float-right btn-primary" %>
           </div>
-        </div>
       <% end %>
+        </div>
     </div>
   </div>
 </div>
