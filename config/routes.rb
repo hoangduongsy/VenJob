@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get "jobs/industry/:industry_id", to: "jobs#index", as: "industry_jobs"
   get "detail/:job_id", to: "jobs#show", as: "job"
   get "apply/:job_id", to: "apply#new", as: "apply"
-  post "confirm/:job_id/", to: "apply#confirm", as: "confirm"
+  post "confirm/:job_id", to: "apply#confirm", as: "confirm"
   post "done/:job_id", to: "apply#done", as: "done"
 
   concern :paginatable do
