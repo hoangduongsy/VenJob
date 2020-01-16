@@ -1,0 +1,25 @@
+<% job = favorite.job %>
+<dl class="row-2">
+  <dt class="col-sm-6">Job Title:</dt>
+  <dd class="col-sm-9">
+    <%= job.title %>
+  </dd>
+
+  <dt class="col-sm-6">Position:</dt>
+  <dd class="col-sm-9">
+    <%= job.position%>
+  </dd>
+
+  <dt class="col-sm-6">Salary:</dt>
+  <dd class="col-sm-9"><%= job.salary %></dd>
+
+  <dt class="col-sm-6">Description:</dt>
+  <dd class="col-sm-9">
+    <%= truncate(simple_format(job.description), escape: false, length: 200) %>
+  </dd>
+
+  <dt class="col-sm-6">Requirement: </dt>
+  <dd class="col-sm-9">
+    <%= truncate(simple_format(job.requirement), escape: false, length: 200) %>
+  </dd>
+</dl>

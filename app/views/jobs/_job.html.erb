@@ -1,7 +1,7 @@
 <dl class="row">
   <dt class="col-sm-3">Job Title:</dt>
   <dd class="col-sm-9">
-    <%= link_to (simple_format job.title), job_path(job_id: job.id) %>
+    <%= link_to (simple_format job.title), job_detail_path(job_id: job.id) %>
   </dd>
 
   <dt class="col-sm-3">Position:</dt>

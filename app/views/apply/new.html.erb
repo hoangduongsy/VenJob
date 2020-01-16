@@ -8,7 +8,7 @@
         <h2>Apply Form</h2>
         </div>
         <%= form_for(@apply, url: confirm_path(@job)) do |f|%>
-         <div class = "form-group row">
+          <div class = "form-group row">
           <%= f.label :first_name %>
           </br>
           <%= f.text_field :first_name, class: "form-control" %>

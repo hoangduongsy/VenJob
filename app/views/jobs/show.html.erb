@@ -50,5 +50,6 @@
         <dd class="col-sm-9"><%= simple_format @job.requirement %></dd>
       </dl>
       <%= link_to "Apply", apply_path, class: "btn btn-primary" %>
+      <%= render "favorites/favorite_form", job: @job %>
     </div>
   </div
