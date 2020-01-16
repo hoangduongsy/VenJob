@@ -1,0 +1,1 @@
+$("#favorite_form").html("<%= escape_javascript(render('favorites/unfavorite_job', job: @job, favorite: current_user.favorites.find_by(job_id: @job.id))) %>");

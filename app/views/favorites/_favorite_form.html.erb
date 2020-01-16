@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <div id = "favorite_form">
+  <% if current_user.favorites.exists?(job_id: job.id) %>
+    <%= render "favorites/unfavorite_job", job: job,
+      favorite: current_user.favorites.find_by(job_id: job.id) %>
+  <% else %>
+    <%= render "favorites/favorite_job", job: job %>
+  <% end %>
+  </div>
+<% end %>
