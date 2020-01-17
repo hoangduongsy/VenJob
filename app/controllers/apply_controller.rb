@@ -1,6 +1,6 @@
 class ApplyController < ApplicationController
   before_action :check_user_logged_in?
-  before_action :load_job, only: [:new, :done, :confirm, :index]
+  before_action :load_job, only: [:new, :done, :confirm]
 
   def index
     @applies = current_user.applies.includes(:job)
