@@ -1,0 +1,37 @@
+<% job = applied.job %>
+<dl class="row-cols">
+  <dt class="col-sm-6">Job Title:</dt>
+  <dd class="col-sm-12" <% link_to job_detail_path(job.id)%>>
+    <%= link_to job.title, job_detail_path(job.id) %>
+  </dd>
+  <dt class="col-sm-6">Position:</dt>
+  <dd class="col-sm-6">
+    <%= job.position%>
+  </dd>
+  <dt class="col-sm-6">Salary:</dt>
+  <dd class="col-sm-6">
+    <%= job.salary %>
+  </dd>
+
+  <dt class="col-sm-6">Applied at:</dt>
+  <dd class="col-sm-9">
+    <%= job.updated_at %>
+  </dd>
+</dl>
+
+<dl class="row-cols">
+  <dt class="col-sm-6">Description:</dt>
+    <dd class="col-sm-9">
+      <%= truncate(simple_format(job.description), escape: false, length: 250) %>
+    </dd>
+  </dt>
+</dl>
+
+<dl class="row-cols">
+  <dt class="col-sm-6">Requirement: </dt>
+    <dd class="col-sm-9">
+      <%= truncate(simple_format(job.requirement), escape: false, length: 250) %>
+    </dd>
+  </dt>
+</dl>
+</br>

@@ -12,3 +12,7 @@ top:
 all:
   job:
     limit: 20
+
+apply:
+  job:
+    limit: 5

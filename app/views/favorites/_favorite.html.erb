@@ -1,6 +1,6 @@
 <% job = favorite.job %>
-<dl class="row-cols-3" id="favorite_job_<%= job.id %>">
-  <dt class="col-sm-9">Job Title:</dt>
+<dl class="row-cols" id = "favorite_job_<%= job.id %>">
+  <dt class="col-sm-6">Job Title:</dt>
   <dd class="col-sm-9">
     <%= job.title %>
   </dd>
@@ -10,25 +10,21 @@
   </dd>
   <dt class="col-sm-6">Salary:</dt>
   <dd class="col-sm-9"><%= job.salary %></dd>
-</dl>
 
-<dl class="row-cols-1">
   <dt class="col-sm-6">Description:</dt>
   <dd class="col-sm-9">
     <%= truncate(simple_format(job.description), escape: false, length: 250) %>
   </dd>
-</dl>
 
-<dl class="row-cols-1">
   <dt class="col-sm-6">Requirement: </dt>
   <dd class="col-sm-9">
     <%= truncate(simple_format(job.requirement), escape: false, length: 250) %>
   </dd>
-</dl>
 
-<dd class="col-sm-9">
-  <%= link_to "Remove", job_favorite_path(job, favorite),
-                        method: :delete,
-                        remote: true,
-                        class: "btn btn-outline-secondary" %>
-</dd>
+  <dd class="col-sm-9">
+    <%= link_to "Remove", job_favorite_path(job, favorite),
+                          method: :delete,
+                          remote: true,
+                          class: "btn btn-danger" %>
+  </dd>
+</dl>

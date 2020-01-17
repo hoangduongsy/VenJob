@@ -49,7 +49,7 @@
         <dt class="col-sm-3">Requirement:</dt>
         <dd class="col-sm-9"><%= simple_format @job.requirement %></dd>
       </dl>
-      <%= link_to "Apply", apply_path, class: "btn btn-primary" %>
-      <%= render "favorites/favorite_form", job: @job %>
+        <%= link_to_if(current_user.applies.find_by(job_id: @job.id).nil?, "Apply", apply_path, class: "btn btn-primary") { link_to "Apply", apply_path, class: "btn btn-primary disabled"} %>
+        <%= render "favorites/favorite_form", job: @job %>
     </div>
   </div

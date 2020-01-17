@@ -35,4 +35,5 @@ Rails.application.routes.draw do
   get "apply/:job_id", to: "apply#new", as: "apply"
   post "confirm/:job_id", to: "apply#confirm", as: "confirm"
   post "done/:job_id", to: "apply#done", as: "done"
+  get "applied", to: "apply#index", as: "applied"
 end

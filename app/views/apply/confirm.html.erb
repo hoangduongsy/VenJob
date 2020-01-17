@@ -38,6 +38,8 @@
           <%= f.hidden_field :cv_url, value: @apply.cv_url %>
         </div>
         </br>
+        <%= @apply.applied_at %>
+        <%= f.hidden_field :applied_at, value: @apply.applied_at %>
 
         <div class = "form-group">
           <div class = "actions">

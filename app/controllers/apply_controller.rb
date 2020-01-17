@@ -1,6 +1,11 @@
 class ApplyController < ApplicationController
   before_action :check_user_logged_in?
-  before_action :load_job, only: [:new, :done, :confirm]
+  before_action :load_job, only: [:new, :done, :confirm, :index]
+
+  def index
+    @applies = current_user.applies.includes(:job)
+    @applies = @applies.page(params[:page]).per(Settings.apply.job.limit)
+  end
 
   def new
     @apply = if params[:apply].present?

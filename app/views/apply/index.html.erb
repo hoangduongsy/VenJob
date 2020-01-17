@@ -1,0 +1,10 @@
+<div class="area-title-wrapper">
+  <h3>Applied Jobs List</h3>
+</div>
+<div>
+  <%= paginate @applies %>
+  <div class="row row-cols-3">
+    <%= render partial: "apply/applied", collection: @applies %>
+  </div>
+</div>
+  <%= paginate @applies %>
