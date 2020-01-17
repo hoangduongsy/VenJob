@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :top, only: :index
   resources :users, only: :show
   resources :favorites, only: :index
-
+  resources :apply, only: :index
   resources :jobs, only: :show, concerns: :paginatable do
     resources :favorites, only: [:create, :destroy]
   end
@@ -35,5 +35,4 @@ Rails.application.routes.draw do
   get "apply/:job_id", to: "apply#new", as: "apply"
   post "confirm/:job_id", to: "apply#confirm", as: "confirm"
   post "done/:job_id", to: "apply#done", as: "done"
-  get "applied", to: "apply#index", as: "applied"
 end

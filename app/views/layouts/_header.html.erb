@@ -7,7 +7,7 @@
     <% if user_signed_in? %>
       <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-outline-success" %>
       <%= link_to "Favorite", favorites_path, method: :get, class: "btn btn-outline-success" %>
-      <%= link_to "Applied jobs", applied_path, method: :get, class: "btn btn-outline-success" %>
+      <%= link_to "Applied jobs", apply_index_path, method: :get, class: "btn btn-outline-success" %>
       <button class="btn btn-outline-success" type="button">History</button>
     <% else %>
       <form class="form-inline">
