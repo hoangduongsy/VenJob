@@ -16,6 +16,12 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
   end
 
+  resources :jobs do
+    collection do
+      get :search
+    end
+  end
+
   as :user do
     get "login" , to: "devise/sessions#new"
     get "registration/", to: "devise/registrations#new"

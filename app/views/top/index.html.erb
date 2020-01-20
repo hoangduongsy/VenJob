@@ -1,3 +1,8 @@
+<%= form_tag(jobs_path , method: :get, class: "text-center") do %>
+  <%= text_field(:search, params[:search],placeholder:" search job titles,descriptions") %>
+  <%= submit_tag ("Search") %>
+<% end %>
+
 <!-- List of latest jobs-->
 <div class="Job list">
   <div class="Job-title-wrapper">
