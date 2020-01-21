@@ -15,11 +15,11 @@ require "csv"
 
         job_params = {
           description: row["description"],
-          position: row["level"],
+          level: row["level"],
           salary: row["salary"],
           requirement: row["requirement"]
         }
-        job = Job.find_or_initialize_by(title: row["name"], company_id: company.id)
+        job = Job.find_or_initialize_by(name: row["name"], company_id: company.id)
         job.update(job_params)
 
         city_params = { region: row["work place"] }

@@ -1,12 +1,18 @@
+<div class=text-center">
+  Result for: <%= @result_search %> </Result>
+  <div class = "float-right">Total result found: <%= @result_count %> </div>
+</div>
+
+<%= render "layouts/search_form" %>
 <!--Display all jobs -->
 <div class="all jobs">
   <div class="job-title-wrapper">
     <h3>All Jobs</h3>
   </div>
-  <%#= paginate @jobs %>
+  <%= paginate @jobs %>
   <div class="row row-cols-1">
     <div class="job-content-wrapper">
       <%= render partial: "jobs/job", collection: @jobs %>
     </div>
   </div>
-<%#= paginate @jobs %>
+<%= paginate @jobs %>

@@ -17,4 +17,18 @@ class Job < ApplicationRecord
     rsolr ||= RSolr.connect :url => "http://localhost:8983/solr"
   end
 
+  def self.sync_to_solr
+    solr = RSolr.connect(url: 'http://127.0.0.1:8983/solr/venjob')
+    find_each do |job|
+      job_info = {id: job.id,
+        description: job.description,
+        requirement: job.requirement,
+        level: job.level,
+        name: job.name,
+        salary: job.salary }
+        solr.add job_info
+      end
+   solr.commit
+  end
+
 end

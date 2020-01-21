@@ -1,0 +1,42 @@
+Job.all => array
+jobs = [{:id 1, :price=>1.00}, {:id=>2, :price=>10.50}, {:id=>2, :price=>10.50}]
+
+jobs.each do |job|
+  solr.add job
+end
+
+
+
+
+  "benefit":["- Weekly Japanese class with a professional Japanese teacher\n- Providing Free snacks \n- Monthly drinking party\n- Technical seminar in the company\n- Badminton and other sports club\n- Get bonus/salary raises by work performance\n- All insurances according to Vietnamese Labor law"],
+        "category":["IT-Phần mềm"],
+        "description":"【 MAIN RESPONSIBILITIES】\n- Analyze system requirements/specification\n- Design, develop and test web application\n- Coordinate with Project Manager and Bridge SE to resolve issues\n- Write technical documentation\n- Support team members to resolve technical issues",
+        "level":["Nhân viên"],
+        "name":"【Urgent】 Web Developer - Lập Trình Viên Web",
+        "requirement":"【EDUCATION】\n- Graduated from College/ University specialized in Information Technology\n- At least 2 years experience as a Web developer\n\n【TECHNICAL EXPERIENCES】\n- Familiar with PHP/Java/Ruby programing languages\n- Familiar with Javascript/HTML/CSS\n- Familiar with OOP methodology\n- Experienced in Web services protocol such as HTTP, REST, SOAP\n- Experienced in MVC framework (Symfony, CodeIgniter, CakePHP, Zend, Struts, Spring, Hibernate, Ruby on Rails)\n- Familiar with Database design (MySQL, PostgreSQL, NoSQL DB)\n- Have experience working with Linux system (Centos, Ubuntu)\n- Have basic knowledge about software testing\n- Have experience working with version control system such as SVN, Git\n- Have experience in key-value store engine (Redis), back-end index engines such as Sphinx, Solr is a huge plus\n\n【LANGUAGE SKILLS】\n- Good at English (reading/writing/speaking) is a huge plus\n- Knowing Japanese is definitely a plus\n\n【 CHARACTERISTICS/SOFT-SKILLS】\n- Honest, straight-forward\n- Passionate and enthusiastic in technology\n- Ability to quickly learn new languages/technology\n- High responsibility, hardworking\n- Problem-solving skill\n- Have experience as a team-lead experience is a huge plus",
+        "salary":"6000000",
+        "type":["Toàn thời gian"],
+        "id":"fd4ec4c4-9e49-4c7a-8a40-a131797be0a6",
+        "company_address":["Lầu 6, TS Tower, số 17 đường số 2, Cư xá Đô Thành, P4, Quận 3"],
+        "company_district":["Quận 3"],
+        "company_id":["5386950976656e179c000000"],
+        "company_name":["Công ty TNHH ZIGExN VeNtura"],
+        "company_province":["Hồ Chí Minh"],
+        "contact_email":["webmaster@zigexn.vn"],
+        "work_place":["Hồ Chí Minh"],
+        "_version_":1656307411414155264
+
+
+    t.string "name"
+    t.text "description"
+    t.text "short_description"
+    t.integer "company_id"
+    t.string "salary"
+    t.integer "currency"
+    t.text "requirement"
+    t.string "level"
+    t.datetime "posted_at"
+    t.datetime "expired_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "code"

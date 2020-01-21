@@ -1,0 +1,5 @@
+<!-- Search form-->
+<%= form_tag(jobs_path , method: :get, class: "text-center") do %>
+  <%= text_field(:search, '', placeholder:" search job titles,descriptions") %>
+  <%= submit_tag ("Search") %>
+<% end %>
